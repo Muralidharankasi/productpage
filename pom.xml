@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<!-- The settings are only meant for sonarqube analysis as gradlew was going OOM  -->
+  <groupId>org.chargebee</groupId>
+  <artifactId>chargebee-app</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <properties>
+    <sonar.projectKey>chargebee_chargebee-app</sonar.projectKey>
+    <sonar.projectName>chargebee-app</sonar.projectName>
+    <sonar.organization>chargebee</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.sources>cb-app/src</sonar.sources>
+    <sonar.java.binaries>webapp/WEB-INF/classes</sonar.java.binaries>
+    <sonar.coverage.jacoco.xmlReportPaths>spock/target/report.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.exclusions>cb-app/src/com/chargebee/app/models/base/*, cb-app/src/com/chargebee/app/models/meta/*</sonar.exclusions>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.sonarsource.scanner.maven</groupId>
+      <artifactId>sonar-maven-plugin</artifactId>
+      <version>3.2</version>
+    </dependency>
+  </dependencies>
+</project>
